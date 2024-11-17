@@ -28,7 +28,7 @@ type User = {
   role: string;
 };
 
-function page() {
+function DetailEventPage() {
   const { event_id } = useParams() as params;
   const router = useRouter();
   const MySwal = withReactContent(Swal);
@@ -408,4 +408,4 @@ function page() {
   );
 }
 
-export default page;
+export default DetailEventPage;

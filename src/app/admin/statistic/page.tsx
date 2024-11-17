@@ -39,8 +39,8 @@ function StatsPage() {
   const [viewType, setViewType] = useState('Monthly'); // 'Monthly' or 'Yearly'
   const [selectedYear, setSelectedYear] = useState(2024); // Default year for 'Yearly' view
   const [revenueData, setRevenueData] = useState<number[]>(Array(12).fill(0));
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [tokenPayload, setTokenPayload] = useState<TokenPayload | null>(null);
+  const [, setIsLoggedIn] = useState(false);
+  const [, setTokenPayload] = useState<TokenPayload | null>(null);
 
   const router = useRouter();
 

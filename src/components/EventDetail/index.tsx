@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 type EventDetailProps = {
   event_title: string;
@@ -45,7 +46,7 @@ const EventDetail = () => {
     <div className="flex min-h-screen flex-col items-center bg-gradient-to-br from-yellow-200 via-red-200 to-pink-200 p-6">
       {/* Large Event Image */}
       <div className="w-full max-w-4xl overflow-hidden rounded-lg border-4 border-black shadow-[8px_8px_0px_#000000]">
-        <img
+        <Image
           src={event.image_url}
           alt={event.event_title}
           className="w-full h-[400px] object-cover border-b-4 border-black"

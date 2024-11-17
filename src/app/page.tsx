@@ -22,7 +22,7 @@ import MyRegis from "@/components/MyRegis";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_AXIOS_BASE_URL;
 
-function page() {
+function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [events, setEvents] = useState<Events[]>([]);
   const [discounts, setDiscounts] = useState<Discounts[]>([]);
@@ -240,7 +240,7 @@ function page() {
       try {
         const token = Cookies.get("access_token");
         // Call the payment API with the selected payment method
-        const response = await axios.post(
+        await axios.post(
           "/api/user/payments",
           {
             registration_id,
@@ -288,7 +288,7 @@ function page() {
     if (result.isConfirmed) {
       try {
         const token = Cookies.get("access_token");
-        const response = await axios.patch(
+        await axios.patch(
           `/api/user/attend/${registration_id}`,
           {},
           {
@@ -397,7 +397,7 @@ function page() {
         const { rating, comment } = formValues;
         try {
           const token = Cookies.get("access_token");
-          const response = await axios.post(
+          await axios.post(
             "/api/user/reviews",
             {
               registration_id,
@@ -661,4 +661,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -31,18 +31,18 @@ const NavBar = () => {
           menuOpen ? 'flex' : 'hidden'
         } absolute top-16 left-0 w-full flex-col items-center bg-gray-200 border-t-4 border-b-4 border-black md:static md:flex md:flex-row md:space-x-6 md:top-0 md:w-auto md:border-none`}
       >
-        <a
+        <Link
           href="/"
           className="text-black font-bold px-4 py-2 border-4 border-black bg-white mt-2 md:mt-0"
         >
           Main Page
-        </a>
-        <a
+        </Link>
+        <Link
           href="/events"
           className="text-black font-bold px-4 py-2 border-4 border-black bg-white mt-2 md:mt-0"
         >
           Event List
-        </a>
+        </Link>
         {isLoggedIn && (
           <>
             <Link
