@@ -109,7 +109,7 @@ function Page() {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((response) => {
+      .then(() => {
         // handle success
         Swal.fire({
           title: "Success!",

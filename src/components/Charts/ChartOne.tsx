@@ -120,13 +120,13 @@ const options: ApexOptions = {
     max: 100,
   },
 };
-
+/*
 interface ChartOneState {
   series: {
     name: string;
     data: number[];
   }[];
-}
+}*/
 
 const ChartOne: React.FC = () => {
   const series = [

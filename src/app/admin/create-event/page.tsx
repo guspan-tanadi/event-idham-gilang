@@ -32,8 +32,8 @@ function Page() {
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
   const [date, setDate] = useState<Date | null>(null);
   const [time, setTime] = useState<Date | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [tokenPayload, setTokenPayload] = useState<TokenPayload | null>(null);
+  const [, setIsLoggedIn] = useState(false);
+  const [, setTokenPayload] = useState<TokenPayload | null>(null);
 
   const [errors, setErrors] = useState<any>({});
 
@@ -136,7 +136,7 @@ function Page() {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((response) => {
+      .then(() => {
         // handle success
         Swal.fire({
           title: "Success!",

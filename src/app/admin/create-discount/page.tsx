@@ -40,8 +40,8 @@ function Page() {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [errors, setErrors] = useState<any>({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [tokenPayload, setTokenPayload] = useState<TokenPayload | null>(null);
+  const [, setIsLoggedIn] = useState(false);
+  const [, setTokenPayload] = useState<TokenPayload | null>(null);
 
   // Refs for input elements
   const startDateInputRef = useRef<HTMLInputElement>(null);

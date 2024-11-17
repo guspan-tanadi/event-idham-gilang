@@ -23,7 +23,7 @@ function Page() {
       });
       console.log("Response:", response);
 
-      const { access_token: accessToken, refreshToken, user } = response.data.data;
+      const { access_token: accessToken, user } = response.data.data;
       const role = user.role;
 
       // Store tokens and user info in cookies

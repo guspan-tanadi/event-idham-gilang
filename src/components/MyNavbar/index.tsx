@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 type NavbarProps = {
   user: { fullname: string } | null;

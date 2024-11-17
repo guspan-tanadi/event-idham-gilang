@@ -28,8 +28,8 @@ function AdminDashboard() {
   const [userLoading, setUserLoading] = useState(false);
   const [registrationLoading, setRegisLoading] = useState(false);
   const [paymentLoading, setPaymentLoading] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [tokenPayload, setTokenPayload] = useState<TokenPayload | null>(null);
+  const [, setIsLoggedIn] = useState(false);
+  const [, setTokenPayload] = useState<TokenPayload | null>(null);
 
   const router = useRouter();
 

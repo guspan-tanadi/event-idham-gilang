@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const NavBar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // Status burger menu
 
   const username = 'NamaPengguna';
@@ -14,7 +15,7 @@ const NavBar = () => {
     <nav className="flex items-center justify-between bg-gray-200 p-4 border-4 border-black">
       {/* Logo di bagian kiri */}
       <div className="text-2xl font-bold">
-        <a href="/">Logo</a>
+        <Link href="/">Logo</Link>
       </div>
 
       {/* Burger menu untuk tampilan mobile */}
@@ -44,18 +45,18 @@ const NavBar = () => {
         </a>
         {isLoggedIn && (
           <>
-            <a
+            <Link
               href="/tickets"
               className="text-black font-bold px-4 py-2 border-4 border-black bg-white mt-2 md:mt-0"
             >
               Ticket
-            </a>
-            <a
+            </Link>
+            <Link
               href="/reviews"
               className="text-black font-bold px-4 py-2 border-4 border-black bg-white mt-2 md:mt-0"
             >
               Review
-            </a>
+            </Link>
           </>
         )}
         {/* Bagian login/register atau nama pengguna */}
@@ -65,12 +66,12 @@ const NavBar = () => {
               {username}
             </span>
           ) : (
-            <a
+            <Link
               href="/login"
               className="text-black font-bold px-4 py-2 border-4 border-black bg-white"
             >
               Login/Register
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -82,12 +83,12 @@ const NavBar = () => {
             {username}
           </span>
         ) : (
-          <a
+          <Link
             href="/login"
             className="text-black font-bold px-4 py-2 border-4 border-black bg-white"
           >
             Login/Register
-          </a>
+          </Link>
         )}
       </div>
     </nav>
