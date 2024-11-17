@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -34,7 +36,7 @@ type Errors = Record<string, string[]>;
 function Page() {
   const router = useRouter();
 
-  const [selectedOption, setSelectedOption] = useState<number | "">("");
+  const [selectedOption, ] = useState<number | "">("");
 //  const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
   const [, setEvents] = useState<Event[]>([]);
   const [discountPercentage, setDiscountPercentage] = useState<number | "">("");
@@ -172,7 +174,6 @@ function Page() {
     checkLoginStatus();
   }, []);
 
-  
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Create Discount"></Breadcrumb>
