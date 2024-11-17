@@ -109,7 +109,7 @@ function Page() {
             </div>
             <div>
               <h2 className="p-5 text-center font-extrabold text-black">
-                DON'T HAVE AN ACCOUNT?{" "}
+                DON&apos;T HAVE AN ACCOUNT?{" "}
                 <a className="text-blue-600" href="/auth/register">
                   SIGN UP NOW!
                 </a>

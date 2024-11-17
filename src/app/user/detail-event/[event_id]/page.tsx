@@ -10,6 +10,7 @@ import MyNavbar from "@/components/MyNavbar";
 import MyFooter from "@/components/MyFooter";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Image from "next/image";
 
 type params = {
   event_id: string;
@@ -205,6 +206,7 @@ function DetailEventPage() {
             title: "Registration Failed",
             text: "An error occurred while registering. Please try again.",
           });
+          console.error(error);
         }
       }
     } else {
@@ -316,7 +318,7 @@ function DetailEventPage() {
           <>
             {/* Event Image */}
             <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg border-4 border-black shadow-[8px_8px_0px_#000000]">
-              <img
+              <Image
                 src={event.image_url}
                 alt={event.event_title}
                 className="h-[400px] w-full border-b-4 border-black object-cover"
