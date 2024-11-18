@@ -12,9 +12,9 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
 
-type params = {
+/*type params = {
   event_id: string;
-};
+};*/
 
 type TokenPayload = {
   id: number;
@@ -30,7 +30,7 @@ type User = {
 };
 
 function Page() {
-  const { event_id } = useParams() as params;
+  const { event_id } = useParams();
   const router = useRouter();
   const MySwal = withReactContent(Swal);
 
