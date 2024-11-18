@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import { useParams } from "next/navigation";
+import { useParams } from "react-router-dom";
 import { useRouter } from "next/router";
 import { Events, Discounts, Reviews } from "@/models/models";
 import LoadingSpinner from "@/components/LoadingSpinner";
