@@ -48,7 +48,7 @@ function StatsPage() {
     const fetchData = async () => {
       const accessToken = Cookies.get("access_token");
       try {
-        const response = await axios.get('http://localhost:8000/api/admin/stats/payments', {
+        const response = await axios.get('api/admin/stats/payments', {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
