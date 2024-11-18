@@ -12,7 +12,7 @@ import MyFooter from "@/components/MyFooter";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-type params = {
+type Params = {
   event_id: string;
 };
 
@@ -30,7 +30,7 @@ type User = {
 };
 
 function Page() {
-  const { event_id = 4 } = useParams() as params;
+  const { event_id } = useParams() as Params;
   const MySwal = withReactContent(Swal);
 
   const [event, setEvent] = useState<Events | null>(null);
@@ -259,7 +259,7 @@ function Page() {
         setTokenPayload(null); // Ensure state is updated if there’s an error
       }
     }
-  }, []);
+  }, [MySwal, router]);
 
   useEffect(() => {
     if (event && discount.length > 0) {
