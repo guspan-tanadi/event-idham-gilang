@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { useRouter, useParams } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import { Event } from "../../../../../../api/src/models/models";
+import { Events } from "@/models/models"
 import React from "react";
 import { eventSchema } from "@/utils/schema";
 import Swal from "sweetalert2";
@@ -19,7 +19,7 @@ function Page() {
   const router = useRouter();
   const { event_id } = useParams() as params;
 
-  const [event, setEvent] = useState<Event | null>(null);
+  const [event, setEvent] = useState<Events | null>(null);
   const [enabled, setEnabled] = useState<boolean>(false); // is_free
   const [eventTitle, setEventTitle] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
