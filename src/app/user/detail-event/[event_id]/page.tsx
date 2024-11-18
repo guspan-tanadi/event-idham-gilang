@@ -29,7 +29,7 @@ type User = {
   role: string;
 };
 
-function DetailEventPage() {
+function Page() {
   const { event_id } = useParams() as params;
   const router = useRouter();
   const MySwal = withReactContent(Swal);
@@ -74,8 +74,7 @@ function DetailEventPage() {
   async function getDiscountByEventId(event_id: number) {
     try {
       const token = Cookies.get("access_token");
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/events/discount/${event_id}`,
+      const response = await axios.get(`api/user/events/discount/${event_id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -93,7 +92,7 @@ function DetailEventPage() {
     try {
       isReviewsLoadingRef.current = true;
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/reviews/event/${event_id}`,
+        `api/user/reviews/event/${event_id}`,
       );
       setReviews(response.data.data);
     } catch (error) {
@@ -108,7 +107,7 @@ function DetailEventPage() {
     try {
       const token = Cookies.get("access_token");
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/users/${userId}`,
+        `api/user/users/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -177,7 +176,7 @@ function DetailEventPage() {
         try {
           const token = Cookies.get("access_token");
           await axios.post(
-            `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/register`,
+            `/api/user/register`,
             {
               event_id: event?.event_id,
               user_id: tokenPayload.id,
@@ -409,4 +408,4 @@ function DetailEventPage() {
   );
 }
 
-export default DetailEventPage;
+export default Page;

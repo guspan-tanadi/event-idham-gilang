@@ -111,7 +111,7 @@ function Page() {
     try {
       const token = Cookies.get("access_token");
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/users/${userId}`,
+        `api/user/users/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -130,7 +130,7 @@ function Page() {
     try {
       const token = Cookies.get("access_token");
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/registrations/${userId}`,
+        `api/user/registrations/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
