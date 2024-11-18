@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import { useParams } from "next/navigation";
 import { useRouter } from "next/router";
 import { Events, Discounts, Reviews } from "@/models/models";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -12,9 +13,9 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
 
-/*type params = {
+type params = {
   event_id: string;
-};*/
+};
 
 type TokenPayload = {
   id: number;
@@ -31,7 +32,7 @@ type User = {
 
 function DetailEventPage() {
   const router = useRouter();
-  const { event_id } = router.query;
+  const { event_id } = useParams() as params;
   const MySwal = withReactContent(Swal);
 
   const [event, setEvent] = useState<Events | null>(null);
