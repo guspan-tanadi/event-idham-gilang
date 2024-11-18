@@ -74,7 +74,7 @@ function Page() {
       loadingRef.current = false;
       forceUpdate();
     }
-  }, [])
+  }, [forceUpdate])
 
   //logic for searching with debounce
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
