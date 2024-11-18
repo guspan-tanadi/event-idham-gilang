@@ -1,17 +1,16 @@
 "use client";
+
 import React, { useEffect, useState, useRef } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useRouter } from "next/router";
+import { useRouter, useParams } from "next/navigation";
 import { Events, Discounts, Reviews } from "@/models/models";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import MyNavbar from "@/components/MyNavbar";
 import MyFooter from "@/components/MyFooter";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import Image from "next/image";
 
 type params = {
   event_id: string;
@@ -31,7 +30,6 @@ type User = {
 };
 
 function DetailEventPage() {
-  const router = useRouter();
   const { event_id } = useParams() as params;
   const MySwal = withReactContent(Swal);
 
@@ -46,6 +44,7 @@ function DetailEventPage() {
   //for loadings
   const isEventLoadingRef = useRef(true);
   const isReviewsLoadingRef = useRef(true);
+  const router = useRouter();
 
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
@@ -317,7 +316,7 @@ function DetailEventPage() {
           <>
             {/* Event Image */}
             <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg border-4 border-black shadow-[8px_8px_0px_#000000]">
-              <Image
+              <img
                 src={event.image_url}
                 alt={event.event_title}
                 className="h-[400px] w-full border-b-4 border-black object-cover"
@@ -392,7 +391,7 @@ function DetailEventPage() {
                   </span>
                   <span>{renderStars(review.rating)}</span>
                 </div>
-                <p className="text-gray-800">{review.comment}</p>
+                <div className="text-gray-800">{review.comment}</div>
               </div>
             ))
           ) : (
