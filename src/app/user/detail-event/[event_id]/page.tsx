@@ -54,8 +54,7 @@ function DetailEventPage() {
     try {
       isEventLoadingRef.current = true;
       const token = Cookies.get("access_token");
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_AXIOS_BASE_URL}/api/user/events/${event_id}`,
+      const response = await axios.get(`api/user/events/${event_id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
