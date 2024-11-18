@@ -19,7 +19,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import React from "react";
 import MyRegis from "@/components/MyRegis";
-
+import { useCallback } from "react";
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_AXIOS_BASE_URL;
 
 function Page() {
@@ -59,7 +59,7 @@ function Page() {
     }
   }, [searchParams]);
 
-  async function fetchData() {
+  const fetchData = useCallback( async() => {
     loadingRef.current = true;
     forceUpdate();
     try {
@@ -74,7 +74,7 @@ function Page() {
       loadingRef.current = false;
       forceUpdate();
     }
-  }
+  }, [])
 
   //logic for searching with debounce
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -437,7 +437,7 @@ function Page() {
   
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     handleSearch();
