@@ -3,6 +3,7 @@ import Image from "next/image";
 
 type eventCardProps = {
   imageUrl: string;
+  eventId: number;
   event_title: string;
   date: string;
   price: number;
@@ -10,7 +11,7 @@ type eventCardProps = {
   is_free: boolean;
   location: string;
   isCompleted: boolean;
-  onDetail: any;
+  onDetail: (eventId: number) => void;
 };
 
 const placeHolderImage =
@@ -18,6 +19,7 @@ const placeHolderImage =
 
 function index({
   imageUrl,
+  eventId,
   event_title,
   date,
   price,
@@ -70,7 +72,7 @@ function index({
           {is_free ? "FREE" : `Rp. ${formattedPrice}`}
         </p>
         <button
-          onClick={onDetail}
+          onClick={() => onDetail(eventId)}
           className="w-full transform rounded-lg border-4 border-black bg-violet-300 px-4 py-2 font-bold text-black transition-transform hover:scale-105 active:scale-95"
         >
           Details

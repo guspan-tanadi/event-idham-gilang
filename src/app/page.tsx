@@ -576,6 +576,7 @@ function Page() {
                   return (
                     <CardEvents
                       key={item.event_id}
+                      eventId={item.event_id}
                       event_title={item.event_title}
                       imageUrl={item.image_url}
                       date={String(item.date)}
