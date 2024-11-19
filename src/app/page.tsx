@@ -20,6 +20,7 @@ import withReactContent from "sweetalert2-react-content";
 import React from "react";
 import MyRegis from "@/components/MyRegis";
 import { useCallback } from "react";
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_AXIOS_BASE_URL;
 
 function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
