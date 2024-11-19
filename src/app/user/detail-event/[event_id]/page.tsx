@@ -12,24 +12,24 @@ import MyFooter from "@/components/MyFooter";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-type Params = {
-  event_id: string;
-};
-
-type TokenPayload = {
-  id: number;
-  role: string;
-};
-
-type User = {
-  userId: number;
-  username: string;
-  email: string;
-  fullname: string;
-  role: string;
-};
-
 function Page() {
+  type Params = {
+    event_id: string;
+  };
+  
+  type TokenPayload = {
+    id: number;
+    role: string;
+  };
+  
+  type User = {
+    userId: number;
+    username: string;
+    email: string;
+    fullname: string;
+    role: string;
+  };
+  
   const { event_id } = useParams() as Params;
   const MySwal = withReactContent(Swal);
 

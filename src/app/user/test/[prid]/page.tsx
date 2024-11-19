@@ -3,7 +3,10 @@
 import { useParams } from "next/navigation";
 
 function Page() {
-    const { prid } = useParams()
+    type Id = {
+        prid: string;
+    }
+    const { prid = 9 } = useParams() as Id
     return <p>Showing as {prid}</p>
 }
 
