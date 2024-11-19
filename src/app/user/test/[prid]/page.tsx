@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 
-function Page() {
+function TestParamPage() {
     type Id = {
         prid: string;
     }
@@ -10,4 +10,4 @@ function Page() {
     return <p>Showing as {prid}</p>
 }
 
-export default Page;
+export default TestParamPage;
